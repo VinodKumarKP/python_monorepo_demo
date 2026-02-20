@@ -1,3 +1,3 @@
-from agent_core.langgraph_core.langgraph_agent import LangGraphAgent as Langgraph
+from agent_core.langgraph_core.langgraph_agent import LangGraphAgent
 
-__all__ = ["Langgraph"]
+__all__ = ["LangGraphAgent"]

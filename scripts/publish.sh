@@ -2,7 +2,7 @@
 set -e
 
 # Configuration - Replace with your bucket name
-BUCKET_NAME="your-my-company-packages-bucket"
+BUCKET_NAME="vkp-agent-core"
 
 echo "🚀 Starting build and publish process..."
 
@@ -20,9 +20,9 @@ echo "🏗️ Building packages..."
 uv build --all-packages
 
 # 4. Upload to S3
-# This creates the PEP 503 'simple' index structure in your bucket
+# Standard s3pypi usage: s3pypi upload <files> --bucket <bucket-name>
 echo "📤 Uploading to S3 bucket: $BUCKET_NAME..."
-s3pypi --bucket "$BUCKET_NAME" --dist-path dist/ --put-index
+s3pypi upload dist/* --bucket "$BUCKET_NAME" --force
 
 echo "✅ Done! You can now install your packages using:"
 echo "pip install <package-name> --extra-index-url https://$BUCKET_NAME.s3.amazonaws.com/"
