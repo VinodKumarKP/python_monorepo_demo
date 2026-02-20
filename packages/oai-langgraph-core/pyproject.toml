@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oai-langgraph-core"
+version = "0.1.0"
+description = "Shim for langgraph-core"
+dependencies = [
+    "langgraph-core"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv.sources]
+langgraph-core = { workspace = true }
