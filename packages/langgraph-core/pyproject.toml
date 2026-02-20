@@ -3,16 +3,16 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my_company-langgraph-core"
+name = "langgraph-core"
 version = "0.1.0"
 description = "Core langgraph functionality with namespace"
 dependencies = [
-    "my_company-agent-core"
+    "agent-core"
 ]
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["my_company*"]
+include = ["agent_core*"]
 
 [tool.uv.sources]
-my_company-agent-core = { workspace = true }
+agent-core = { workspace = true }
